@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>布局定位</title>
+    <style type="text/css">
+        form {
+            border: solid 1px black;
+            width: 260px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    姓名：
+                </td>
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    年龄：
+                </td>
+                <td>
+                    <input name=age id=age type=number min=0 max=100/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    出生日期:
+                </td>
+                <td>
+                    <input name=birthday id=birthday type=date />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input name=email id=email type=email required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    个人主页:
+                </td>
+                <td>
+                    <input name=url id=url type=url />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    个人简介:
+                </td>
+                <td>
+                    <textarea name=memo id=memo required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
