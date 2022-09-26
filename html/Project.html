@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework_Project</title>
+</head>
+<style>
+    body {
+        font-size: 14px;
+        font-family: "微软雅黑";
+    }
+    
+    .information {
+        width: 360px;
+        height: 410px;
+        /* border: 1px solid black; */
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 10px;
+        background-image: url(https://img1.baidu.com/it/u=1546227440,2897989905&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500);
+    }
+    
+    .information form {
+        display: block;
+        margin-left: 35px;
+    }
+    
+    table input {
+        /* width: 200px;
+        height: 18px;
+        border: 1px solid #d4cdba; */
+        padding: 2px;
+    }
+    
+    .basic input {
+        width: 200px;
+        height: 18px;
+        border: 1px solid #d4cdba;
+    }
+    
+    table textarea {
+        border: 1px solid #d4cdba;
+    }
+    
+    table select {
+        border: 1px solid #d4cdba;
+        width: 206px;
+        height: 18px;
+    }
+    
+    .btn input {
+        width: 100px;
+        height: 30px;
+        background-color: #93b518;
+        margin-top: 10px;
+        border-radius: 3px;
+        color: #fff;
+        border: 1px solid #d4cdba;
+    }
+</style>
+
+<body>
+    <div class="information">
+        <form>
+            <table>
+                <tr>
+                    <th colspan="2" align="center">
+                        <h2>信息统计表</h2>
+                    </th>
+                </tr>
+                <tr class="basic">
+                    <td>
+                        <p>姓名：</p>
+                    </td>
+                    <td><input type="text" name="username" placeholder="输入真实姓名">
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td><input type="radio" name="sex" value="0">男
+                        <input type="radio" name="sex" value="1">女</td>
+                </tr>
+                <tr class="basic">
+                    <td>出生日期：</td>
+                    <td>
+                        <input name=birthday id=birthday type=date />
+                    </td>
+                </tr>
+                <tr class="basic">
+                    <td>电话号码：</td>
+                    <td>
+                        <input type="tel" name="telphone" placeholder="181****4679">
+                    </td>
+                </tr>
+                <tr class="basic">
+                    <td>邮箱：</td>
+                    <td>
+                        <input type="email" name="useremail" placeholder="12345@123.com">
+                    </td>
+                </tr>
+                <tr class="basic">
+                    <td>爱好：</td>
+                    <td>
+                        <select name="hobby">
+                            <option value="">--请选择--</option>
+                            <option value="1">游泳</option>
+                            <option value="2">看书</option>
+                            <option value="3">音乐</option>
+                            <option value="4">游戏</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>个人简介：</td>
+                    <td>
+                        <textarea name="conment" rows="6" cols="26"></textarea>
+                    </td>
+                </tr>
+                <tr class="btn">
+                    <td colspan="2" align="center">
+                        <input name="flish" type="submit" value="提交">
+                        <input name="regest" type="reset" value="重置"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
