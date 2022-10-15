@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业10月15日</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .box1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: myfirst 5s;
+    }
+    
+    ul li {
+        list-style: none;
+    }
+    
+    @keyframes myfirst {
+        0% {
+            background: red;
+            left: 0px;
+            top: 0px;
+        }
+        25% {
+            background: yellow;
+            left: 200px;
+            top: 0px;
+        }
+        50% {
+            background: green;
+            left: 200px;
+            top: 200px;
+        }
+        75% {
+            background: purple;
+            left: 0px;
+            top: 200px;
+        }
+        100% {
+            background: red;
+            left: 0px;
+            top: 0px;
+        }
+    }
+    
+    ul {
+        margin-top: 220px;
+    }
+    
+    ul li {
+        display: flex;
+        list-style: none;
+        width: 50px;
+        height: 70px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .erth {
+        background-color: #1296db;
+        transition-property: width;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        transition-delay: 0.2s;
+    }
+    
+    ul li img {
+        width: 45px;
+        height: 45px;
+        display: block;
+    }
+    
+    .stu {
+        background-color: brown;
+        transition-property: width;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        transition-delay: 0.2s;
+    }
+    
+    .erth:hover {
+        width: 200px;
+    }
+    
+    .stu:hover {
+        width: 200px;
+    }
+    
+    ul li p {
+        color: aliceblue;
+        float: right;
+        margin-left: 20px;
+        /* display: none; */
+    }
+</style>
+
+<body>
+    <!-- 作业一 -->
+    <p>作业一</p>
+    <div class="box1">
+
+    </div>
+    <!-- 作业二 -->
+    <p>作业二</p>
+    <ul>
+        <li class="erth">
+            <div><img src="../img/地球.png" />
+            </div>
+            <p>访客Vistor</p>
+        </li>
+        <li class="stu">
+            <div><img src="../img/学生.png" />
+            </div>
+            <p>学生Student</p>
+        </li>
+    </ul>
+</body>
+
+</html>
