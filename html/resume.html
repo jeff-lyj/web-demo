@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据验证</title>
+</head>
+<style>
+    div {
+        width: 400px;
+        height: 675px;
+        margin: auto;
+        margin-top: 200px;
+    }
+    
+    form table {
+        border: solid 1px black;
+        border-radius: 5px;
+        background-color: darkgray;
+    }
+    
+    table tr td ul li {
+        list-style: none;
+    }
+</style>
+
+<body>
+    <div>
+        <form id="myForm" method="post">
+            <table>
+                <tr>
+                    <th colspan="2" align="center">数据验证</th>
+                </tr>
+                <tr>
+                    <td>姓名：</td>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td>
+                        <input type="radio" name="sex" id="sex1" value="0">男
+                        <input type="radio" name="sex" id="sex2" value="1">女
+                    </td>
+                </tr>
+                <tr>
+                    <td>血型：</td>
+                    <td><input type="radio" name="bool" value="0">O
+                        <input type="radio" name="bool" value="1">A
+                        <input type="radio" name="bool" value="2">B
+                        <input type="radio" name="bool" value="3">AB</td>
+                </tr>
+                <tr>
+                    <td>简介：</td>
+                    <td>
+                        <textarea rows="2" cols="20" id="jianjie"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>文件：</td>
+                    <td>
+                        <input type="file" id="myfile" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>城市：</td>
+                    <td>
+                        <select id="city">
+                            <option value="">请选择</option>
+                            <option value="0">北京</option>
+                            <option value="1">上海</option>
+                            <option value="2">天津</option>
+                            <option value="3">西安</option>
+                            <option value="4">深圳</option>
+                            <option value="5">成都</option>
+                            <option value="6">重庆</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>兴趣爱好：</td>
+                    <td>
+                        <ul>
+                            <li><input type="checkbox" name="hobby" value="1">读书</li>
+                            <li><input type="checkbox" name="hobby" value="2">上网</li>
+                            <li><input type="checkbox" name="hobby" value="3">游泳</li>
+                            <li><input type="checkbox" name="hobby" value="4">登山</li>
+                            <li><input type="checkbox" name="hobby" value="5">音乐</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="提交" onclick="validateForm()" />
+                        <input type="reset" value="重置" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<script>
+    function validateForm() {
+        //验证姓名
+        var usname = document.getElementById("username").value;
+        if (usname == null || usname == "") {
+            alert("姓名不能为空");
+            return false;
+        }
+
+        //验证密码
+        var pwd = document.getElementById("password").value;
+        if (pwd.length < 6) {
+            alert("密码最少为6位");
+            return false;
+        }
+
+        // 验证性别
+        var man = document.getElementById("sex1");
+        var women = document.getElementById("sex2");
+        if (man.checked || women.checked) {
+
+        } else {
+            alert('未选中'); //弹出提示 
+            return false;
+        }
+
+        //验证血型
+        var bools = document.getElementsByName("bool");
+        var flag = 0;
+        for (var i = 0; i < bools.length; i++) {
+            if (bools.item(i).checked == true) {
+                flag = 1;
+                break;
+            }
+        }
+        if (!flag) {
+            alert("请选择血型");
+            return false;
+        }
+        //验证简介
+        var myinfo = document.getElementById("jianjie").value;
+        if (myinfo == null || myinfo == "") {
+            alert("请输入简介")
+            return false;
+        }
+
+        //验证城市
+        var degree = document.getElementById("city").value;
+        if (!degree) {
+            alert("请选择城市");
+            return false;
+        }
+
+        //验证爱好
+        var hobbys = document.getElementsByName("hobby");
+        var flag = 0;
+        for (var i = 0; i < hobbys.length; i++) {
+            if (hobbys.item(i).checked == true) {
+                flag = 1;
+                alert("已完成信息采集")
+                break;
+            }
+        }
+        if (!flag) {
+            alert("请选择爱好");
+            return false;
+        }
+    }
+</script>
+
+</html>
