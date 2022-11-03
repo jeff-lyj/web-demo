@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复制文本</title>
+</head>
+
+<body>
+    <input type="text" id="box1" value="" />
+    <input type="button" id="btn" onclick="copy()" value="复制" />
+    <input type="text" id="box2" value="" />
+    <p id="fn" style="display:none;">复制成功！</p>
+</body>
+<script>
+    function copy() {
+        var a = document.getElementById("box1").value;
+        document.getElementById("box2").value = a;
+        document.getElementById("fn").style.display = "inline";
+    }
+</script>
+
+</html>
