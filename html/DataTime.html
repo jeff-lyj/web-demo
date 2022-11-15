@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字电子时钟</title>
+</head>
+<style>
+    .clock_con {
+        font-size: 54px;
+        color: #7093DB;
+        text-shadow: 1px 1px rgba(197, 223, 248, 0.8), 2px 2px rgba(197, 223, 248, 0.8), 3px 3px rgba(197, 223, 248, 0.8), 4px 4px rgba(197, 223, 248, 0.8), 5px 5px rgba(197, 223, 248, 0.8), 6px 6px rgba(197, 223, 248, 0.8);
+    }
+</style>
+
+<body>
+    <div id="clock" class="clock_con"></div>
+</body>
+<script>
+    function fnCreatClock() {
+        //申明变量
+        var dLocal, nYear, nMonth, nDate, nHours, nMinutes, nSeconds, weekNum, week;
+        //获取时间
+        function fnGetDate() {
+            dLocal = new Date();
+            nYear = dLocal.getFullYear() + "年";
+            nMonth = dLocal.getMonth() + 1 + "月";
+            nDate = dLocal.getDate() + "日";
+            nHours = dLocal.getHours();
+            nMinutes = dLocal.getMinutes();
+            nSeconds = dLocal.getSeconds();
+            //星期
+            weekNum = dLocal.getDay();
+            if (weekNum == 0) {
+                week = "星期日";
+            } else if (weekNum == 1) {
+                week = "星期一";
+            } else if (weekNum == 2) {
+                week = "星期二";
+            } else if (weekNum == 3) {
+                week = "星期三";
+            } else if (weekNum == 4) {
+                week = "星期四";
+            } else if (weekNum == 5) {
+                week = "星期五";
+            } else if (weekNum == 6) {
+                week = "星期六";
+            }
+        }
+        //1-9数字前加个0
+        function fnToDouble(num) {
+            var sResult = '';
+            if (num < 10) {
+                sResult = '0' + num;
+            } else {
+                sResult = '' + num;
+            }
+            return sResult;
+        }
+        //输出表达方式
+        function fnFormatDate() {
+            return nYear + '-' + fnToDouble(nMonth) + '-' + fnToDouble(nDate) +
+                ' ' + fnToDouble(nHours) + ':' + fnToDouble(nMinutes) + ':' + fnToDouble(nSeconds) + week;
+        }
+
+        var eClock = document.getElementById('clock');
+        fnGetDate();
+        //每秒更新
+        eClock.innerHTML = fnFormatDate();
+        setInterval(function() {
+            fnGetDate();
+            eClock.innerHTML = fnFormatDate();
+        }, 1000);
+    }
+    fnCreatClock();
+</script>
+
+</html>
